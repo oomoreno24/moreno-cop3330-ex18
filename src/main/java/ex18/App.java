@@ -39,6 +39,25 @@ Modify the program so it also supports the Kelvin scale.
 
 public class App {
     public static void main(String[] args) {
-        
+        Scanner in = new Scanner(System.in);
+        System.out.print("Enter C to convert from Fahrenheit to Celsius.\nEnter F to convert from Celsius to Fahrenheit.\nYour choice: ");
+        String conversionType = in.nextLine();
+
+        // Celsius is chosen
+        if (conversionType.equals("C") || conversionType.equals("c")) {
+            System.out.print("Enter the temperature in Fahrenheit: ");
+            float F = in.nextFloat();
+            // calculations
+            float C = (F - 32) * 5 / 9;
+            System.out.printf("The temperature in Celsius is %.2f.\n", C);
+        }
+        // Fahrenheit is chosen
+        if (conversionType.equals("F") || conversionType.equals("f")) {
+            System.out.print("Enter the temperature in Celsius: ");
+            float C = in.nextFloat();
+            // calculations
+            float F = (C * 9 / 5) + 32;
+            System.out.printf("The temperature in Fahrenheit is %.2f.\n", F);
+        }
     }
 }
